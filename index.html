@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <link rel="stylesheet" href="main.min.css">
     <title>Mazars</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
 </head>
 <body>
     <aside>
@@ -17,12 +20,12 @@
         <div>
             <h4>Navigation</h4>
             <nav>
-                <p class="selected">KPIs</p>
-                <p>Analyse</p>
-                <p>Projection</p>
+                <p class="selected" data-to-section="kpis">KPIs</p>
+                <p data-to-section="analysis">Analyse</p>
+                <p data-to-section="predict">Projection</p>
             </nav>
         </div>
-        <div>
+        <div data-section="kpis">
             <h4>KPIs</h4>
             <ul>
                 <li>Intitulé KPI 1</li>
@@ -43,7 +46,7 @@
                 <div class="icon"></div>
             </div>
         </header>
-        <section>
+        <section data-section="kpis">
             <div class="data">
                 <h2>KPIs</h2>
 

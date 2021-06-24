@@ -1,6 +1,10 @@
 @import url('https://use.fontawesome.com/releases/v5.12.1/css/all.css');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
+:root {
+    --color-primary: hsl(90, 80%, 40%);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -80,7 +84,7 @@ aside {
                 &.selected {
                     font-weight: bold;
                     color: black;
-                    background-color: hsl(90deg, 100%, 90%);
+                    background-color: hsl(90deg, 80%, 80%);
                 }
             }
         }
@@ -211,7 +215,13 @@ main {
 
                 .box {
                     cursor: pointer;
-                    
+
+                    &:hover {
+                        h3 {
+                            color: var(--color-primary);
+                        }
+                    }
+
                     &:not(:last-child) {
                         margin-bottom: 12px;
                     }
