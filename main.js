@@ -4,7 +4,7 @@ let currentKpi;
 $.getJSON('data.json', json => {
     data = json;
 
-    loadService('dop');
+    loadService(Object.keys(data.services)[0]);
 });
 
 $(document).on('click', '[data-to-section]', e => {
@@ -33,7 +33,7 @@ $(document).on('click', '[data-to-project]', e => {
     const project = data.projects.find(d => d.id === id);
 
     const html = `<p data-back><i class="fas fa-arrow-left"></i>${currentKpi.title}</p>
-    <h2>${project.title}<span class="tag" data-tag="${project.tag}"></span></h2>`;
+    <h2>${project.title}${project.tags.map(d => `<span class="tag" data-tag="${d}"></span>`).join('')}</h2>`;
     $('#project .title').html(html);
 
     $(`#project`).removeClass('hidden');
@@ -62,9 +62,7 @@ $(document).on('click', '[data-kpi]', e => {
     $(`[data-kpi="${id}"]`).addClass('selected');
 
     if ($el.parent().is('ul')) {
-        console.log('?');
         const top = $(`.data [data-kpi="${id}"]`).position().top - 100;
-        console.log(top);
         $('.data').scrollTop(top);
     }
 
@@ -92,7 +90,11 @@ function loadService(slug) {
     $('.info h2').html('');
     $('#projects').html('<div></div><div></div><div></div>');
 
-    if (!service) return;
+    if (!service) {
+        const html = '<p class="center dim">Aucun indicateur</p>';
+        $('#kpis').append(html);
+        return;
+    }
 
     for (const id of service.kpis) {
         const kpi = data.kpis.find(d => d.id === id);
@@ -159,7 +161,7 @@ function openKpi(id) {
         const project = data.projects.find(d => d.id === id);
 
         const html = `<div class="box" data-to-project="${id}">
-            <h3>${project.title}<span class="tag" data-tag="${project.tag}"></span></h3>
+            <h3>${project.title}${project.tags.map(d => `<span class="tag" data-tag="${d}"></span>`).join('')}</h3>
             <i class="fas fa-chevron-right"></i>
             <p>${project.description}</p>
         </div>`;

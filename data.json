@@ -2,8 +2,8 @@
     "kpis": [
         {
             "id": 0,
-            "title": "Intitulé KPI 0",
-            "projects": [0, 1, 2],
+            "title": "Effectivité développement nouveaux produits",
+            "projects": [0, 1],
             "budget": {
                 "total": 38000,
                 "spent": 75,
@@ -15,32 +15,28 @@
                     {
                         "project": 1,
                         "share": 26
-                    },
-                    {
-                        "project": 2,
-                        "share": 20
                     }
                 ]
             }
         },
         {
             "id": 1,
-            "title": "Intitulé KPI 1",
-            "projects": [0, 1, 2, 3],
+            "title": "Performance des ventes",
+            "projects": [2, 3, 4],
             "budget": {
                 "total": 38000,
                 "spent": 60,
                 "shares": [
                     {
-                        "project": 0,
+                        "project": 2,
                         "share": 54
                     },
                     {
-                        "project": 1,
+                        "project": 3,
                         "share": 26
                     },
                     {
-                        "project": 2,
+                        "project": 4,
                         "share": 20
                     }
                 ]
@@ -48,45 +44,126 @@
         },
         {
             "id": 2,
-            "title": "Intitulé KPI 2",
-            "projects": [0, 1, 2, 3],
+            "title": "Efficacité opérationnelle",
+            "projects": [5, 6, 7, 8],
             "budget": {
                 "total": 38000,
                 "spent": 60,
                 "shares": [
                     {
-                        "project": 0,
+                        "project": 5,
                         "share": 54
                     },
                     {
-                        "project": 1,
+                        "project": 6,
                         "share": 26
                     },
                     {
-                        "project": 2,
-                        "share": 20
+                        "project": 7,
+                        "share": 10
+                    },
+                    {
+                        "project": 8,
+                        "share": 10
                     }
                 ]
             }
         },
         {
             "id": 3,
-            "title": "Intitulé KPI 3",
-            "projects": [0, 1, 2, 3],
+            "title": "Efficacité des fournisseurs",
+            "projects": [9, 8, 10],
             "budget": {
                 "total": 38000,
                 "spent": 60,
                 "shares": [
                     {
-                        "project": 0,
+                        "project": 9,
                         "share": 54
                     },
                     {
-                        "project": 1,
+                        "project": 8,
                         "share": 26
                     },
                     {
+                        "project": 10,
+                        "share": 20
+                    }
+                ]
+            }
+        },
+        {
+            "id": 4,
+            "title": "Réactivité vis-à-vis des clients",
+            "projects": [8, 11, 12, 2, 13],
+            "budget": {
+                "total": 38000,
+                "spent": 60,
+                "shares": [
+                    {
+                        "project": 8,
+                        "share": 54
+                    },
+                    {
+                        "project": 11,
+                        "share": 26
+                    },
+                    {
+                        "project": 12,
+                        "share": 20
+                    },
+                    {
                         "project": 2,
+                        "share": 20
+                    },
+                    {
+                        "project": 13,
+                        "share": 20
+                    }
+                ]
+            }
+        },
+        {
+            "id": 5,
+            "title": "Performance du Support",
+            "projects": [12, 14, 15],
+            "budget": {
+                "total": 38000,
+                "spent": 60,
+                "shares": [
+                    {
+                        "project": 12,
+                        "share": 54
+                    },
+                    {
+                        "project": 14,
+                        "share": 26
+                    },
+                    {
+                        "project": 15,
+                        "share": 20
+                    }
+                ]
+            }
+        },
+        {
+            "id": 6,
+            "title": "Performance de l'exploitation",
+            "projects": [16, 17, 18],
+            "budget": {
+                "total": 38000,
+                "spent": 60,
+                "shares": [
+                    {
+                        "project": 9,
+                        "share": 54
+                    },
+                    {
+                        "project": 8,
+                        "share": 26
+                    },
+                    {
+                        "project": 10,
                         "share": 20
                     }
                 ]
@@ -96,35 +173,128 @@
     "projects": [
         {
             "id": 0,
-            "title": "Intitulé Projet 0",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde iusto eveniet maiores obcaecati.",
-            "tag": "sysadmin"
+            "title": "Analyse comportementale",
+            "description": "Analyse des usages des produits actuels",
+            "tags": ["segmentation"]
         },
         {
             "id": 1,
-            "title": "Intitulé Projet 1",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde iusto eveniet maiores obcaecati.",
-            "tag": "iot"
+            "title": "Recommandation NBA/NBO",
+            "description": "Proposition de produit NextBestAction / NextBestoffer",
+            "tags": ["data", "segmentation"]
         },
         {
             "id": 2,
-            "title": "Intitulé Projet 2",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde iusto eveniet maiores obcaecati.",
-            "tag": "web"
+            "title": "Prédiction des besoins de livraisons",
+            "description": "Mise en place du suivi prédictif des livraisons futurs",
+            "tags": ["data", "ml"]
         },
         {
             "id": 3,
-            "title": "Intitulé Projet 3",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde iusto eveniet maiores obcaecati.",
-            "tag": "iot"
+            "title": "Prédiction des ventes",
+            "description": "Mise en place de l'outil de prédiction des ventes à venir",
+            "tags": ["data", "ml"]
+        },
+        {
+            "id": 4,
+            "title": "Optimisation des opérations de vente",
+            "description": "Simplification et automatisation du process de vente via Salesforce",
+            "tags": ["crm"]
+        },
+        {
+            "id": 5,
+            "title": "Remplacement WMS",
+            "description": "Choix et déploiement d'un nouvel outil de WMS pour les entrepôts Europe",
+            "tags": ["wms", "ot"]
+        },
+        {
+            "id": 6,
+            "title": "Automatisation des convoyeurs",
+            "description": "Connexion des nouveaux convoyeurs au SI Industriel",
+            "tags": ["ot"]
+        },
+        {
+            "id": 7,
+            "title": "Monitoring des équipements industriels",
+            "description": "Déploiement de sondes et traitements des alertes",
+            "tags": ["iot"]
+        },
+        {
+            "id": 8,
+            "title": "Datamart logistique",
+            "description": "Création d'un cube dédiée à la logistique",
+            "tags": ["data"]
+        },
+        {
+            "id": 9,
+            "title": "Evolution de la plateforme d'achats",
+            "description": "Déploiement de la nouvelle version du portail",
+            "tags": ["portail"]
+        },
+        {
+            "id": 10,
+            "title": "MDM Fournisseurs",
+            "description": "Création d'un référentiel unique des fournisseurs mondiaux",
+            "tags": ["data"]
+        },
+        {
+            "id": 11,
+            "title": "Contrôle automatisée des livraisons",
+            "description": "Reconnaissance automatique des colis",
+            "tags": ["ia"]
+        },
+        {
+            "id": 12,
+            "title": "Projet Chatbot",
+            "description": "Mise en œuvre d'un chatbot pour les besoins logistiques, IT…",
+            "tags": ["nlp", "data"]
+        },
+        {
+            "id": 13,
+            "title": "Optimisation tournée de livraison",
+            "description": "Déploiement de la nouvelle version de l'outil",
+            "tags": []
+        },
+        {
+            "id": 14,
+            "title": "RPA actions correctives",
+            "description": "Automatisation des actions de support non télédistribuables",
+            "tags": ["rpa"]
+        },
+        {
+            "id": 15,
+            "title": "Automatisation du traitement des mails entrants",
+            "description": "Mise en place des réponses automatiques",
+            "tags": ["rpa", "nlp"]
+        },
+        {
+            "id": 16,
+            "title": "Centralisation des logs",
+            "description": "Projet de traitement, d'agrégation et de correlations des logs IT",
+            "tags": ["logs", "maintenance"]
+        },
+        {
+            "id": 17,
+            "title": "Programme dette technique",
+            "description": "Programme de gestion des obsolescences des outils",
+            "tags": ["IT Foundation"]
+        },
+        {
+            "id": 18,
+            "title": "Traitement automatiques des alarmes",
+            "description": "Classification intelligent des alarmes pour la supervision",
+            "tags": ["supervision"]
         }
     ],
     "services": {
-        "dop": {
-            "kpis": [0, 1, 2, 3]
+        "dcm": {
+            "kpis": [0, 1]
         },
-        "abc": {
-            "kpis": [2, 3]
+        "sup": {
+            "kpis": [2, 3, 4]
+        },
+        "dsi": {
+            "kpis": [5, 6]
         }
     }
 }
