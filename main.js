@@ -159,7 +159,8 @@ function openKpi(id) {
         const project = data.projects.find(d => d.id === id);
 
         const html = `<div class="box" data-to-project="${id}">
-            <h3>${project.title}<span class="tag" data-tag="${project.tag}"></span><i class="fas fa-chevron-right"></i></h3>
+            <h3>${project.title}<span class="tag" data-tag="${project.tag}"></span></h3>
+            <i class="fas fa-chevron-right"></i>
             <p>${project.description}</p>
         </div>`;
 

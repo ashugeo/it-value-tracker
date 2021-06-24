@@ -340,7 +340,8 @@ main {
                 border-bottom: 1px solid hsl(0, 0%, 90%);
 
                 h2 {
-                    height: 30px;
+                    min-height: 30px;
+                    padding-right: 32px;
 
                     &:empty {
                         background-color: hsl(0, 0%, 95%);
@@ -430,10 +431,11 @@ main {
                                 content: "";
                                 width: 8px;
                                 height: 8px;
-                                background-color: red;
+                                background-color: var(--color-primary);
                                 border-radius: 50%;
                                 margin-right: 8px;
                                 align-self: center;
+                                flex-shrink: 0;
                             }
 
                             &:nth-child(1) {
@@ -501,6 +503,7 @@ main {
                 }
 
                 .box {
+                    position: relative;
                     cursor: pointer;
                     border: 1px solid hsl(0, 0%, 90%);
 
@@ -509,10 +512,10 @@ main {
 
                         h3 {
                             color: var(--color-primary);
-
-                            i {
-                                color: var(--color-primary);
-                            }
+                        }
+                        
+                        i {
+                            color: var(--color-primary);
                         }
                     }
 
@@ -521,19 +524,21 @@ main {
                     }
 
                     h3 {
-                        display: flex;
                         align-items: center;
                         margin-bottom: 8px;
 
                         .tag {
                             margin-left: 8px;
+                            vertical-align: 2px;
                         }
+                    }
 
-                        i {
-                            margin-left: auto;
-                            font-size: .75rem;
-                            color: hsl(0, 0%, 80%);
-                        }
+                    i {
+                        position: absolute;
+                        top: 29px;
+                        right: 16px;
+                        font-size: .75rem;
+                        color: hsl(0, 0%, 80%);
                     }
 
                     p {
