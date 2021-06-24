@@ -513,7 +513,7 @@ main {
                         h3 {
                             color: var(--color-primary);
                         }
-                        
+
                         i {
                             color: var(--color-primary);
                         }
@@ -650,8 +650,73 @@ h4 {
 
 .tab {
     padding: 32px;
+
+    .box {
+        padding: 24px;
+    }
+
+    > div {
+        &:not(:last-child) {
+            margin-bottom: 32px;
+        }
+    }
+
+    h4 {
+        margin-bottom: 12px;
+    }
+
+    p {
+        line-height: 1.6em;
+
+        span.user {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-size: cover;
+            vertical-align: -10px;
+            margin-right: 8px;
+            cursor: default;
+        }
+
+        & + h4 {
+            margin-top: 32px;
+        }
+
+        span {
+            cursor: pointer;
+
+            &:hover {
+                color: var(--color-primary);
+            }
+        }
+    }
 }
 
 .hidden {
     display: none !important;
+}
+
+.row {
+    display: flex;
+
+    > div {
+        flex: 1;
+
+        &:not(:last-child) {
+            margin-right: 24px;
+        }
+    }
+
+    & + .row {
+        margin-top: 40px;
+    }
+}
+
+.center {
+    text-align: center;
+}
+
+.icon-right {
+    margin-left: 8px;
 }
