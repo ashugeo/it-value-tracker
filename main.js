@@ -18,8 +18,22 @@ $(document).on('click', '[data-to-tab]', e => {
     $(`[data-tab="${to}"]`).removeClass('hidden');
 });
 
-$(document).on('click', '[data-to-project]', e => {
-    // const project = $el.attr('data-to-project');
+$(document).on('click', '[data-to-project]', () => {
     $('[data-section]').addClass('hidden');
     $(`[data-section="project"]`).removeClass('hidden');
+});
+
+
+$(document).on('click', '.dropdown', () => {
+    $('.dropdown-menu').toggleClass('open');
+});
+
+$(document).on('click', '[data-service]', e => {
+    $('.dropdown-menu').toggleClass('open');
+    const $el = $(e.currentTarget);
+    // $('[data-service].selected').removeClass('selected');
+    // $el.addClass('selected');
+
+    const html = `${$el.html()}<i class="fas fa-caret-down"></i>`;
+    $('.dropdown').html(html);
 });
