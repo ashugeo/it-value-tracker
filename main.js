@@ -79,8 +79,10 @@ $(document).on('click', '[data-back]', () => {
 });
 
 function loadService(slug) {
-    $('[data-section]').addClass('hidden');
-    $(`[data-section="kpis"]`).removeClass('hidden');
+    if ($('[data-to-section="kpis"]').is('.selected')) {
+        $('[data-section]').addClass('hidden');
+        $(`[data-section="kpis"]`).removeClass('hidden');
+    }
     
     const service = data.services[slug];
 
@@ -108,6 +110,13 @@ function loadService(slug) {
 }
 
 function openKpi(id) {
+    if (id === -1) {
+        $('.info h2').empty();
+        $('.budget .chart').empty();
+        $('#projects').html('<div></div><div></div><div></div>');
+        return;
+    }
+
     const kpi = data.kpis.find(d => d.id === id);
     currentKpi = kpi;
 
@@ -143,7 +152,6 @@ function openKpi(id) {
     </ul>`;
 
     $('.budget .chart').html(html);
-    
 
     $('#projects').empty();
 

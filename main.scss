@@ -195,6 +195,7 @@ main {
             height: auto;
             // box-shadow: 0 8px 16px hsl(0, 0%, 90%);
             overflow: hidden;
+            z-index: 1;
 
             &:not(.open) {
                 display: none;
@@ -256,6 +257,7 @@ main {
                 padding: 32px 0 0 32px;
 
                 p {
+                    display: inline-block;
                     color: var(--color-primary);
                     font-weight: bold;
                     margin-bottom: 12px;
@@ -333,6 +335,7 @@ main {
             }
             
             .budget {
+                position: relative;
                 padding: 32px 24px;
                 border-bottom: 1px solid hsl(0, 0%, 90%);
 
@@ -342,6 +345,24 @@ main {
                     &:empty {
                         background-color: hsl(0, 0%, 95%);
                         border-radius: 8px;
+                        flex: 1;
+
+                        & ~ i {
+                            display: none;
+                        }
+                    }
+                }
+
+                i {
+                    position: absolute;
+                    top: 16px;
+                    right: 16px;
+                    padding: 16px;
+                    color: hsl(0, 0%, 85%);
+                    cursor: pointer;
+
+                    &:hover {
+                        color: black;
                     }
                 }
 
