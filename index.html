@@ -13,20 +13,22 @@
 </head>
 <body>
     <aside>
-        <div class="logo-wrap">
-            <div class="icon"></div>
-            <p>Acme Inc.</p>
-        </div>
+        <a href="/">
+            <div class="logo-wrap">
+                <div class="icon"></div>
+                <p>Acme Inc.</p>
+            </div>
+        </a>
         <div>
             <h4>Navigation</h4>
             <nav>
-                <p class="selected" data-to-section="kpis">KPIs</p>
+                <p class="selected" data-to-section="kpis">Indicateurs</p>
                 <p data-to-section="analysis">Analyse</p>
                 <p data-to-section="predict">Projection</p>
             </nav>
         </div>
         <div data-section="kpis">
-            <h4>KPIs</h4>
+            <h4>Indicateurs</h4>
             <ul>
                 <li>Intitulé KPI 1</li>
                 <li>Intitulé KPI 2</li>
@@ -37,7 +39,7 @@
     <main>
         <header>
             <div class="dropdown">
-                <div class="icon"></div>
+                <div class="icon">DOP</div>
                 <p>Direction des Opérations</p>
                 <i class="fas fa-caret-down"></i>
             </div>
@@ -48,7 +50,7 @@
         </header>
         <section data-section="kpis">
             <div class="data">
-                <h2>KPIs</h2>
+                <h2>Indicateurs</h2>
 
                 <div class="box">
                     <h3>Intitulé KPI 1</h3>
@@ -70,27 +72,54 @@
             </div>
             <div class="info">
                 <div class="budget">
-                    <h2>Budget DSI</h2>
+                    <h2>Intitulé KPI 1</h2>
+
+                    <h4>Budgets alloués à la DSI</h4>
+
+                    <div class="chart"></div>
                 </div>
 
                 <div class="projects">
-                    <h2>Projets DSI</h2>
+                    <h4>Projets de la DSI</h4>
     
-                    <div class="box">
+                    <div class="box" data-to-project="1">
                         <h3>Intitulé projet 1<span class="tag">Sysadmin</span></h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </div>
     
-                    <div class="box">
+                    <div class="box" data-to-project="2">
                         <h3>Intitulé projet 2<span class="tag">IoT</span></h3>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum quia suscipit totam.</p>
                     </div>
     
-                    <div class="box">
+                    <div class="box" data-to-project="3">
                         <h3>Intitulé projet 3<span class="tag">Web</span></h3>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente repudiandae quibusdam.</p>
                     </div>
                 </div>
+            </div>
+        </section>
+        <section data-section="project" class="hidden">
+            <ul class="tabs">
+                <li class="selected" data-to-tab="dashboard">Dashboard</li>
+                <li data-to-tab="info">Informations</li>
+                <li data-to-tab="comments">Commentaires</li>
+            </ul>
+
+            <div data-tab="dashboard" class="tab">
+                <h2>Dashboard</h2>
+
+                <div class="box">
+                    <h3>Lorem ipsum dolor sit amet</h3>
+                </div>
+            </div>
+
+            <div data-tab="info" class="tab hidden">
+                <h2>Informations</h2>
+            </div>
+
+            <div data-tab="comments" class="tab hidden">
+                <h2>Comments</h2>
             </div>
         </section>
     </main>

@@ -26,6 +26,10 @@ aside {
     height: 100%;
     border-right: 1px solid hsl(0, 0%, 90%);
 
+    a {
+        text-decoration: none;
+    }
+
     .logo-wrap {
         height: 80px;
         display: flex;
@@ -132,17 +136,17 @@ main {
                 border-radius: 8px;
                 background-color: hsl(0, 0%, 90%);
                 margin-right: 16px;
-            }
-
-            p {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: .75rem;
                 font-weight: bold;
+                color: hsl(0, 0%, 50%);
             }
 
             i {
                 margin-left: 16px;
                 color: hsl(0, 0%, 70%);
-                // font-size: .75rem;
-                // margin-top: .25rem;
             }
 
             &:hover {
@@ -178,10 +182,18 @@ main {
         width: 100%;
         background-color: hsl(0, 0%, 95%);
         display: flex;
+
+        &[data-section="project"] {
+            display: block;
+        }
+
+        &.hidden {
+            display: none;
+        }
         
         .data {
             flex: 1;
-            padding: 32px;
+            padding: 32px 24px;
             overflow: auto;
 
             .box {
@@ -204,17 +216,30 @@ main {
         .info {
             flex: 0 0 40%;
             border-left: 1px solid hsl(0, 0%, 90%);
+            background-color: white;
+
+            h4 {
+                margin-bottom: 16px;
+            }
             
             .budget {
-                padding: 32px 16px;
+                padding: 32px 24px;
                 border-bottom: 1px solid hsl(0, 0%, 90%);
+
+                .chart {
+                    height: 240px;
+                    background-color: hsl(0, 0%, 95%);
+                    border-radius: 4px;
+                    margin-top: 16px;
+                }
             }
             
             .projects {
-                padding: 32px 16px;
+                padding: 32px 24px;
 
                 .box {
                     cursor: pointer;
+                    border: 1px solid hsl(0, 0%, 90%);
 
                     &:hover {
                         h3 {
@@ -244,6 +269,33 @@ main {
                 }
             }
         }
+
+        .tabs {
+            display: flex;
+            list-style: none;
+            padding: 16px 32px;
+            width: 100%;
+
+            li {
+                padding: 16px 8px;
+                color: hsl(0, 0%, 50%);
+                cursor: pointer;
+
+                &:not(:last-child) {
+                    margin-right: 32px;
+                }
+
+                &.selected {
+                    color: var(--color-primary);
+                    font-weight: bold;
+                    border-bottom: 4px solid hsl(90, 100%, 40%);
+                }
+
+                &:not(.selected):hover {
+                    color: black;
+                }
+            }
+        }
     }
 }
 
@@ -255,11 +307,11 @@ i {
     background-color: white;
     padding: 16px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px hsl(0, 0%, 90%);
+    // box-shadow: 0 2px 4px hsl(0, 0%, 90%);
 }
 
 h2 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: normal;
     margin-bottom: 2rem;
 }
@@ -281,4 +333,12 @@ h4 {
     padding: 4px 8px;
     border-radius: 4px;
     background-color: hsl(0, 0%, 90%);
+}
+
+.tab {
+    padding: 32px;
+    
+    &.hidden {
+        display: none;
+    }
 }
