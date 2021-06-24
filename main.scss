@@ -275,9 +275,29 @@ main {
         width: 100%;
         background-color: hsl(0, 0%, 95%);
         display: block;
+
+        .title {
+            padding: 32px 0 0 32px;
+
+            h2 {
+                margin-bottom: 0;
+            }
+
+            p {
+                margin-top: 8px;
+                font-size: .875rem;
+                max-width: 48ch;
+                color: hsl(0, 0%, 50%);
+                line-height: 1.6em;
+            }
+        }
         
         &[data-section="kpis"] {
             display: flex;
+
+            h2 {
+                margin-bottom: 1em;
+            }
         }
         
         &[data-section="project"] {    
@@ -606,6 +626,31 @@ main {
                     color: black;
                 }
             }
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 16px;
+
+            button {
+                background-color: var(--color-primary);
+                color: white;
+                border: none;
+                padding: 16px 32px;
+                font-size: .875rem;
+                font-weight: bold;
+                text-transform: uppercase;
+                letter-spacing: .05rem;
+                font-family: inherit;
+                border-radius: 8px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: hsl(90, 80%, 45%);
+                }
+            }
+
         }
     }
 }

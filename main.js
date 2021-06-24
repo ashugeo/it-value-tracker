@@ -15,6 +15,8 @@ $(document).on('click', '[data-to-section]', e => {
     const to = $el.attr('data-to-section');
     $('[data-section]').addClass('hidden');
     $(`[data-section="${to}"]`).removeClass('hidden');
+
+    if (to === 'analysis') $('[data-to-tab="new-analysis"]').click();
 });
 
 $(document).on('click', '[data-to-tab]', e => {
@@ -35,6 +37,8 @@ $(document).on('click', '[data-to-project]', e => {
     const html = `<p data-back><i class="fas fa-arrow-left"></i>${currentKpi.title}</p>
     <h2>${project.title}${project.tags.map(d => `<span class="tag" data-tag="${d}"></span>`).join('')}</h2>`;
     $('#project .title').html(html);
+
+    $('[data-to-tab="dashboard"]').click();
 
     $(`#project`).removeClass('hidden');
 });
