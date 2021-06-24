@@ -239,6 +239,18 @@ main {
             overflow: auto;
 
             .box {
+                cursor: pointer;
+                border: 2px solid transparent;
+
+                &.selected {
+                    border-color: hsl(86, 72%, 64%);
+                    box-shadow: 0 12px 24px hsl(0, 0%, 90%);
+
+                    h3 {
+                        // color: var(--color-primary);
+                    }
+                }
+
                 &:not(:last-child) {
                     margin-bottom: 32px;
                 }
@@ -261,23 +273,153 @@ main {
             background-color: white;
 
             h4 {
-                margin-bottom: 16px;
+                margin-bottom: 12px;
             }
             
             .budget {
                 padding: 32px 24px;
                 border-bottom: 1px solid hsl(0, 0%, 90%);
 
+                h2 {
+                    height: 30px;
+
+                    &:empty {
+                        background-color: hsl(0, 0%, 95%);
+                        border-radius: 8px;
+                    }
+                }
+
+                .values {
+                    display: flex;
+                    margin-bottom: 24px;
+
+                    div {
+                        &:not(:last-child) {
+                            margin-right: 40px;
+                        }
+
+                        p {
+                            font-size: .75rem;
+                            color: hsl(0, 0%, 50%);
+                            text-transform: uppercase;
+
+                            strong {
+                                font-size: 1rem;
+                                color: black;
+                            }
+
+                            span {
+                                font-size: .75rem;
+                                color: hsl(0, 0%, 50%);
+                                margin-left: 8px;
+                            }
+                        }
+                    }
+                }
+                
                 .chart {
-                    height: 240px;
-                    background-color: hsl(0, 0%, 95%);
-                    border-radius: 4px;
-                    margin-top: 16px;
+                    &:empty {
+                        height: 120px;
+                        background-color: hsl(0, 0%, 95%);
+                        border-radius: 4px;
+                        margin-top: 16px;
+                    }
+
+                    ul {
+                        list-style: none;
+
+                        li {
+                            display: flex;
+                            align-items: baseline;
+                            font-size: .875rem;
+                            font-weight: bold;
+
+                            &:not(:last-child) {
+                                margin-bottom: 8px;
+                            }
+                            
+                            span {
+                                margin-left: 8px;
+                                font-size: .75rem;
+                                font-weight: normal;
+                                color: hsl(0, 0%, 50%);
+                            }
+                            
+                            &:not(:last-child) {
+                                margin-right: 16px;
+                            }
+                            
+                            &::before {
+                                content: "";
+                                width: 8px;
+                                height: 8px;
+                                background-color: red;
+                                border-radius: 50%;
+                                margin-right: 8px;
+                                align-self: center;
+                            }
+
+                            &:nth-child(1) {
+                                &::before {
+                                    background-color: hsl(87, 52%, 33%);
+                                }
+                            }
+
+                            &:nth-child(2) {
+                                &::before {
+                                    background-color: hsl(87, 72%, 64%);
+                                }
+                            }
+
+                            &:nth-child(3) {
+                                &::before {
+                                    background-color: hsl(87, 100%, 9%);
+                                }
+                            }
+                        }
+                    }
+
+                    .bar {
+                        display: flex;
+                        height: 12px;
+                        background-color: hsl(0, 0%, 95%);
+                        border-radius: 6px;
+                        margin-bottom: 12px;
+                        overflow: hidden;
+
+                        div {
+                            height: 100%;
+
+                            &:nth-child(1) {
+                                background-color: hsl(87, 52%, 33%);
+                            }
+
+                            &:nth-child(2) {
+                                background-color: hsl(87, 72%, 64%);
+                            }
+
+                            &:nth-child(3) {
+                                background-color: hsl(87, 100%, 9%);
+                            }
+                        }
+                    }
                 }
             }
             
             .projects {
                 padding: 32px 24px;
+
+                #projects {
+                    > div:empty {
+                        height: 120px;
+                        background-color: hsl(0, 0%, 95%);
+                        border-radius: 8px;
+    
+                        &:not(:last-child) {
+                            margin-bottom: 12px;
+                        }
+                    }
+                }
 
                 .box {
                     cursor: pointer;
@@ -355,7 +497,7 @@ i {
 h2 {
     font-size: 1.5rem;
     font-weight: normal;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 h3 {

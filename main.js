@@ -1,3 +1,11 @@
+let data;
+
+$.getJSON('data.json', json => {
+    data = json;
+
+    loadService('dop');
+});
+
 $(document).on('click', '[data-to-section]', e => {
     const $el = $(e.currentTarget);
     $('[data-to-section].selected').removeClass('selected');
@@ -31,9 +39,93 @@ $(document).on('click', '.dropdown', () => {
 $(document).on('click', '[data-service]', e => {
     $('.dropdown-menu').toggleClass('open');
     const $el = $(e.currentTarget);
-    // $('[data-service].selected').removeClass('selected');
-    // $el.addClass('selected');
-
+    
     const html = `${$el.html()}<i class="fas fa-caret-down"></i>`;
     $('.dropdown').html(html);
+    
+    const service = $el.attr('data-service');
+    loadService(service);
 });
+
+
+$(document).on('click', '[data-kpi]', e => {
+    const $el = $(e.currentTarget);
+    $('[data-kpi].selected').removeClass('selected');
+    $el.addClass('selected');
+
+    const id = parseInt($el.attr('data-kpi'));
+    const kpi = data.kpis.find(d => d.id === id);
+
+    console.log(kpi);
+
+    $('.info h2').html(kpi.title);
+
+    console.log(kpi.budget);
+
+    const html = `<div class="values">
+        <div>
+            <p>Budget total</p>
+            <p><strong>${kpi.budget.total.toLocaleString()} €</strong></p>
+        </div>
+        <div>
+            <p>Budget dépensé</p>
+            <p><strong>${(kpi.budget.spent / 100 * kpi.budget.total).toLocaleString()} €</strong><span>${kpi.budget.spent}%</span></p>
+        </div>
+    </div>
+    <div class="bar">
+        ${kpi.projects.map(d => {
+            d = parseInt(d);
+            const share = kpi.budget.shares.find(p => p.project === d)?.share;
+            console.log(share);
+            const width = share * kpi.budget.spent / 100;
+
+            return `<div style="width: ${width}%"></div>`;
+        }).join('')}
+    </div>
+    <ul>
+        ${kpi.projects.map(d => {
+            d = parseInt(d);
+            const project = data.projects.find(p => p.id === d);
+            const share = kpi.budget.shares.find(p => p.project === d)?.share;
+
+            return `<li>${project.title}<span>${share || 0}%</span></li>`;
+        }).join('')}
+    </ul>`;
+
+    $('.budget .chart').html(html);
+    
+
+    $('#projects').empty();
+
+    for (const id of kpi.projects) {
+        const project = data.projects.find(d => d.id === id);
+
+        const html = `<div class="box" data-to-project="${id}">
+            <h3>${project.title}</h3>
+            <p>${project.description}</p>
+        </div>`;
+
+        $('#projects').append(html);
+    }
+});
+
+function loadService(slug) {
+    const service = data.services[slug];
+
+    $('#kpis').empty();
+    $('.info h2').html('');
+    $('#projects').html('<div></div><div></div><div></div>');
+
+    if (!service) return;
+
+    for (const id of service.kpis) {
+        const kpi = data.kpis.find(d => d.id === id);
+
+        const html = `<div class="box" data-kpi="${id}">
+            <h3>${kpi.title}</h3>
+            <div class="chart"></div>
+        </div>`;
+        
+        $('#kpis').append(html);
+    }
+}

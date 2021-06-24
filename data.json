@@ -1,0 +1,126 @@
+{
+    "kpis": [
+        {
+            "id": 0,
+            "title": "Intitulé KPI 0",
+            "projects": [0, 1, 2],
+            "budget": {
+                "total": 38000,
+                "spent": 75,
+                "shares": [
+                    {
+                        "project": 0,
+                        "share": 54
+                    },
+                    {
+                        "project": 1,
+                        "share": 26
+                    },
+                    {
+                        "project": 2,
+                        "share": 20
+                    }
+                ]
+            }
+        },
+        {
+            "id": 1,
+            "title": "Intitulé KPI 1",
+            "projects": [0, 1, 2, 3],
+            "budget": {
+                "total": 38000,
+                "spent": 60,
+                "shares": [
+                    {
+                        "project": 0,
+                        "share": 54
+                    },
+                    {
+                        "project": 1,
+                        "share": 26
+                    },
+                    {
+                        "project": 2,
+                        "share": 20
+                    }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "title": "Intitulé KPI 2",
+            "projects": [0, 1, 2, 3],
+            "budget": {
+                "total": 38000,
+                "spent": 60,
+                "shares": [
+                    {
+                        "project": 0,
+                        "share": 54
+                    },
+                    {
+                        "project": 1,
+                        "share": 26
+                    },
+                    {
+                        "project": 2,
+                        "share": 20
+                    }
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "title": "Intitulé KPI 3",
+            "projects": [0, 1, 2, 3],
+            "budget": {
+                "total": 38000,
+                "spent": 60,
+                "shares": [
+                    {
+                        "project": 0,
+                        "share": 54
+                    },
+                    {
+                        "project": 1,
+                        "share": 26
+                    },
+                    {
+                        "project": 2,
+                        "share": 20
+                    }
+                ]
+            }
+        }
+    ],
+    "projects": [
+        {
+            "id": 0,
+            "title": "Intitulé Projet 0",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde iusto eveniet maiores obcaecati optio veritatis."
+        },
+        {
+            "id": 1,
+            "title": "Intitulé Projet 1",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde iusto eveniet maiores obcaecati optio veritatis."
+        },
+        {
+            "id": 2,
+            "title": "Intitulé Projet 2",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde iusto eveniet maiores obcaecati optio veritatis."
+        },
+        {
+            "id": 3,
+            "title": "Intitulé Projet 3",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde iusto eveniet maiores obcaecati optio veritatis."
+        }
+    ],
+    "services": {
+        "dop": {
+            "kpis": [0, 1, 2, 3]
+        },
+        "abc": {
+            "kpis": [2, 3]
+        }
+    }
+}
