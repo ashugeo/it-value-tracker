@@ -107,15 +107,22 @@ aside {
         }
     
         ul {
-            padding: 0 32px;
+            // padding: 0
             list-style: none;
     
             li {
-                padding: 12px 0;
+                padding: 12px 32px;
                 cursor: pointer;
                 color: hsl(0, 0%, 50%);
+                border-left: 4px solid transparent;
+
+                &.selected {
+                    border-color: var(--color-primary);
+                    color: var(--color-primary);
+                    font-weight: bold;
+                }
     
-                &:hover {
+                &:hover:not(.selected) {
                     color: black;
                 }
             }
@@ -279,6 +286,11 @@ main {
             flex: 1;
             padding: 32px 24px;
             overflow: auto;
+            scroll-behavior: smooth;
+
+            > div {
+                position: relative;
+            }
 
             .box {
                 cursor: pointer;

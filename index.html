@@ -30,13 +30,9 @@
         </div>
         <div data-section="kpis">
             <h4>Indicateurs</h4>
-            <ul>
-                <li>Intitulé KPI 1</li>
-                <li>Intitulé KPI 2</li>
-                <li>Intitulé KPI 3</li>
-            </ul>
+            <ul id="list-kpis"></ul>
         </div>
-        <div data-section="analysis">
+        <div data-section="analysis" class="hidden">
             <h4>Rapports</h4>
             <ul>
                 <li>Intitulé Rapport 1</li>
@@ -85,9 +81,11 @@
         </header>
         <section data-section="kpis">
             <div class="data">
-                <h2>Indicateurs stratégiques</h2>
-
-                <div id="kpis"></div>
+                <div>
+                    <h2>Indicateurs stratégiques</h2>
+    
+                    <div id="kpis"></div>
+                </div>
             </div>
             <div class="info">
                 <div class="budget">

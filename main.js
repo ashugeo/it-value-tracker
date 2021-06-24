@@ -56,12 +56,26 @@ $(document).on('click', '[data-service]', e => {
 
 $(document).on('click', '[data-kpi]', e => {
     const $el = $(e.currentTarget);
-    $('[data-kpi].selected').removeClass('selected');
-    $el.addClass('selected');
-
     const id = parseInt($el.attr('data-kpi'));
 
+    $('[data-kpi]').removeClass('selected');
+    $(`[data-kpi="${id}"]`).addClass('selected');
+
+    if ($el.parent().is('ul')) {
+        console.log('?');
+        const top = $(`.data [data-kpi="${id}"]`).position().top - 100;
+        console.log(top);
+        $('.data').scrollTop(top);
+    }
+
     openKpi(id);
+});
+
+$(document).on('click', '[data-back]', () => {
+    openKpi(currentKpi.id);
+
+    $('[data-section]').addClass('hidden');
+    $(`[data-section="kpis"]`).removeClass('hidden');
 });
 
 function loadService(slug) {
@@ -71,6 +85,8 @@ function loadService(slug) {
     const service = data.services[slug];
 
     $('#kpis').empty();
+    $('#list-kpis').empty();
+
     $('.info h2').html('');
     $('#projects').html('<div></div><div></div><div></div>');
 
@@ -85,6 +101,9 @@ function loadService(slug) {
         </div>`;
         
         $('#kpis').append(html);
+
+        const li = `<li data-kpi="${id}">${kpi.title}</li>`;
+        $('#list-kpis').append(li);
     }
 }
 
@@ -139,11 +158,3 @@ function openKpi(id) {
         $('#projects').append(html);
     }
 }
-
-$(document).on('click', '[data-back]', () => {
-    console.log('?');
-    openKpi(currentKpi.id);
-
-    $('[data-section]').addClass('hidden');
-    $(`[data-section="kpis"]`).removeClass('hidden');
-});
