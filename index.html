@@ -16,7 +16,8 @@
         <a href="/">
             <div class="logo-wrap">
                 <div class="icon"></div>
-                <p>Acme Inc.</p>
+                <p>IT value tracker<span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span></p>
+                <!-- <p>IT value tracker</p> -->
             </div>
         </a>
         <div>
@@ -33,6 +34,14 @@
                 <li>Intitulé KPI 1</li>
                 <li>Intitulé KPI 2</li>
                 <li>Intitulé KPI 3</li>
+            </ul>
+        </div>
+        <div data-section="analysis">
+            <h4>Rapports</h4>
+            <ul>
+                <li>Intitulé Rapport 1</li>
+                <li>Intitulé Rapport 2</li>
+                <li>Intitulé Rapport 3</li>
             </ul>
         </div>
     </aside>
@@ -76,7 +85,7 @@
         </header>
         <section data-section="kpis">
             <div class="data">
-                <h2>Indicateurs</h2>
+                <h2>Indicateurs stratégiques</h2>
 
                 <div id="kpis"></div>
             </div>
@@ -84,13 +93,13 @@
                 <div class="budget">
                     <h2></h2>
 
-                    <h4>Budgets alloués à la DSI</h4>
+                    <h4>Budgets alloués à l'IT</h4>
 
                     <div class="chart"></div>
                 </div>
 
                 <div class="projects">
-                    <h4>Projets de la DSI</h4>
+                    <h4>Projets IT</h4>
                     
                     <div id="projects">
                         <div></div>
@@ -100,7 +109,9 @@
                 </div>
             </div>
         </section>
-        <section data-section="project" class="hidden">
+        <section id="project" data-section="project" class="hidden">
+            <div class="title"></div>
+
             <ul class="tabs">
                 <li class="selected" data-to-tab="dashboard">Dashboard</li>
                 <li data-to-tab="info">Informations</li>
@@ -108,19 +119,15 @@
             </ul>
 
             <div data-tab="dashboard" class="tab">
-                <h2>Dashboard</h2>
-
                 <div class="box">
                     <h3>Lorem ipsum dolor sit amet</h3>
                 </div>
             </div>
 
             <div data-tab="info" class="tab hidden">
-                <h2>Informations</h2>
             </div>
 
             <div data-tab="comments" class="tab hidden">
-                <h2>Comments</h2>
             </div>
         </section>
     </main>

@@ -38,20 +38,22 @@ aside {
         border-bottom: 1px solid hsl(0, 0%, 90%);
 
         .icon {
-            width: 32px;
-            height: 32px;
+            width: 40px;
+            height: 40px;
             border-radius: 8px;
-            background-color: hsl(0, 0%, 90%);
-            margin-right: 16px;
+            background-color: hsl(90, 100%, 40%);
+            margin-right: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
             transform: rotate(45deg);
             
             &::after {
-                content: "A";
+                font-size: 1.25rem;
+                content: "IT";
                 font-weight: bold;
-                color: hsl(0, 0%, 50%);
+                color: white;
+                letter-spacing: .05rem;
                 transform: rotate(-45deg);
             }
         }
@@ -60,14 +62,25 @@ aside {
             text-transform: uppercase;
             letter-spacing: .05rem;
             font-weight: bold;
-            color: hsl(0, 0%, 50%);
+            color: hsl(90, 100%, 35%);
+
+            span {
+                font-size: .6875rem;
+                display: block;
+                text-transform: none;
+                width: 150px;
+                color: hsl(0, 0%, 50%);
+                font-weight: normal;
+                letter-spacing: normal;
+                margin-top: 2px;
+            }
         }
     }
 
     > div {
         padding: 16px 0;
 
-        &:not(:last-child) {
+        &:nth-child(2) {
             border-bottom: 1px solid hsl(0, 0%, 90%);
         }
 
@@ -197,6 +210,10 @@ main {
                 &:hover {
                     background-color: hsl(0, 0%, 97%);
                 }
+
+                &:not(:last-child) {
+                    // border-bottom: 1px solid hsl(0, 0%, 90%);
+                }
             }
         }
 
@@ -224,13 +241,38 @@ main {
         width: 100%;
         background-color: hsl(0, 0%, 95%);
         display: flex;
-
+        
         &[data-section="project"] {
             display: block;
-        }
 
-        &.hidden {
-            display: none;
+            .title {
+                padding: 32px 0 0 32px;
+
+                p {
+                    color: var(--color-primary);
+                    font-weight: bold;
+                    margin-bottom: 12px;
+                    cursor: pointer;
+
+                    i {
+                        margin-right: 8px;
+                    }
+
+                    &:hover {
+                        color: black;
+                    }
+                }
+
+                h2 {
+                    margin-bottom: 0;
+                    display: flex;
+                    align-items: center;
+
+                    span {
+                        margin-left: 8px;
+                    }
+                }
+            }
         }
         
         .data {
@@ -240,7 +282,7 @@ main {
 
             .box {
                 cursor: pointer;
-                border: 2px solid transparent;
+                border: 4px solid transparent;
 
                 &.selected {
                     border-color: hsl(86, 72%, 64%);
@@ -271,6 +313,8 @@ main {
             flex: 0 0 40%;
             border-left: 1px solid hsl(0, 0%, 90%);
             background-color: white;
+            display: flex;
+            flex-flow: column wrap;
 
             h4 {
                 margin-bottom: 12px;
@@ -407,7 +451,9 @@ main {
             }
             
             .projects {
+                flex: 1;
                 padding: 32px 24px;
+                overflow: auto;
 
                 #projects {
                     > div:empty {
@@ -426,8 +472,14 @@ main {
                     border: 1px solid hsl(0, 0%, 90%);
 
                     &:hover {
+                        background-color: hsl(0, 0%, 97%);
+
                         h3 {
                             color: var(--color-primary);
+
+                            i {
+                                color: var(--color-primary);
+                            }
                         }
                     }
 
@@ -443,12 +495,19 @@ main {
                         .tag {
                             margin-left: 8px;
                         }
+
+                        i {
+                            margin-left: auto;
+                            font-size: .75rem;
+                            color: hsl(0, 0%, 80%);
+                        }
                     }
 
                     p {
                         font-size: .875rem;
                         line-height: 1.6em;
                         color: hsl(0, 0%, 50%);
+                        padding-right: 32px;
                     }
                 }
             }
@@ -461,7 +520,7 @@ main {
             width: 100%;
 
             li {
-                padding: 16px 8px;
+                padding: 12px 0;
                 color: hsl(0, 0%, 50%);
                 cursor: pointer;
 
@@ -516,13 +575,45 @@ h4 {
     font-size: .75rem;
     padding: 4px 8px;
     border-radius: 4px;
-    background-color: hsl(0, 0%, 90%);
+    color: hsl(90, 80%, 40%);
+    background-color: hsl(90, 90%, 90%);
+
+    &::after {
+        content: attr(data-tag);
+    }
+
+    &[data-tag="sysadmin"] {
+        color: hsl(200, 80%, 30%);
+        background-color: hsl(200, 90%, 90%);
+        
+        &::after {
+            content: "Sysadmin";
+        }
+    }
+
+    &[data-tag="iot"] {
+        color: hsl(20, 80%, 30%);
+        background-color: hsl(20, 90%, 85%);
+        
+        &::after {
+            content: "IoT";
+        }
+    }
+
+    &[data-tag="web"] {
+        color: hsl(260, 80%, 30%);
+        background-color: hsl(260, 90%, 90%);
+        
+        &::after {
+            content: "Web";
+        }
+    }
 }
 
 .tab {
     padding: 32px;
-    
-    &.hidden {
-        display: none;
-    }
+}
+
+.hidden {
+    display: none !important;
 }

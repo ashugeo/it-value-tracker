@@ -1,4 +1,5 @@
 let data;
+let currentKpi;
 
 $.getJSON('data.json', json => {
     data = json;
@@ -26,11 +27,17 @@ $(document).on('click', '[data-to-tab]', e => {
     $(`[data-tab="${to}"]`).removeClass('hidden');
 });
 
-$(document).on('click', '[data-to-project]', () => {
+$(document).on('click', '[data-to-project]', e => {
     $('[data-section]').addClass('hidden');
-    $(`[data-section="project"]`).removeClass('hidden');
-});
+    const id = parseInt($(e.currentTarget).attr('data-to-project'));
+    const project = data.projects.find(d => d.id === id);
 
+    const html = `<p data-back><i class="fas fa-arrow-left"></i>${currentKpi.title}</p>
+    <h2>${project.title}<span class="tag" data-tag="${project.tag}"></span></h2>`;
+    $('#project .title').html(html);
+
+    $(`#project`).removeClass('hidden');
+});
 
 $(document).on('click', '.dropdown', () => {
     $('.dropdown-menu').toggleClass('open');
@@ -47,20 +54,45 @@ $(document).on('click', '[data-service]', e => {
     loadService(service);
 });
 
-
 $(document).on('click', '[data-kpi]', e => {
     const $el = $(e.currentTarget);
     $('[data-kpi].selected').removeClass('selected');
     $el.addClass('selected');
 
     const id = parseInt($el.attr('data-kpi'));
-    const kpi = data.kpis.find(d => d.id === id);
 
-    console.log(kpi);
+    openKpi(id);
+});
+
+function loadService(slug) {
+    $('[data-section]').addClass('hidden');
+    $(`[data-section="kpis"]`).removeClass('hidden');
+    
+    const service = data.services[slug];
+
+    $('#kpis').empty();
+    $('.info h2').html('');
+    $('#projects').html('<div></div><div></div><div></div>');
+
+    if (!service) return;
+
+    for (const id of service.kpis) {
+        const kpi = data.kpis.find(d => d.id === id);
+
+        const html = `<div class="box" data-kpi="${id}">
+            <h3>${kpi.title}</h3>
+            <div class="chart"></div>
+        </div>`;
+        
+        $('#kpis').append(html);
+    }
+}
+
+function openKpi(id) {
+    const kpi = data.kpis.find(d => d.id === id);
+    currentKpi = kpi;
 
     $('.info h2').html(kpi.title);
-
-    console.log(kpi.budget);
 
     const html = `<div class="values">
         <div>
@@ -76,7 +108,6 @@ $(document).on('click', '[data-kpi]', e => {
         ${kpi.projects.map(d => {
             d = parseInt(d);
             const share = kpi.budget.shares.find(p => p.project === d)?.share;
-            console.log(share);
             const width = share * kpi.budget.spent / 100;
 
             return `<div style="width: ${width}%"></div>`;
@@ -101,31 +132,18 @@ $(document).on('click', '[data-kpi]', e => {
         const project = data.projects.find(d => d.id === id);
 
         const html = `<div class="box" data-to-project="${id}">
-            <h3>${project.title}</h3>
+            <h3>${project.title}<span class="tag" data-tag="${project.tag}"></span><i class="fas fa-chevron-right"></i></h3>
             <p>${project.description}</p>
         </div>`;
 
         $('#projects').append(html);
     }
-});
-
-function loadService(slug) {
-    const service = data.services[slug];
-
-    $('#kpis').empty();
-    $('.info h2').html('');
-    $('#projects').html('<div></div><div></div><div></div>');
-
-    if (!service) return;
-
-    for (const id of service.kpis) {
-        const kpi = data.kpis.find(d => d.id === id);
-
-        const html = `<div class="box" data-kpi="${id}">
-            <h3>${kpi.title}</h3>
-            <div class="chart"></div>
-        </div>`;
-        
-        $('#kpis').append(html);
-    }
 }
+
+$(document).on('click', '[data-back]', () => {
+    console.log('?');
+    openKpi(currentKpi.id);
+
+    $('[data-section]').addClass('hidden');
+    $(`[data-section="kpis"]`).removeClass('hidden');
+});

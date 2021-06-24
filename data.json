@@ -97,22 +97,26 @@
         {
             "id": 0,
             "title": "Intitulé Projet 0",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde iusto eveniet maiores obcaecati optio veritatis."
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde iusto eveniet maiores obcaecati.",
+            "tag": "sysadmin"
         },
         {
             "id": 1,
             "title": "Intitulé Projet 1",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde iusto eveniet maiores obcaecati optio veritatis."
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde iusto eveniet maiores obcaecati.",
+            "tag": "iot"
         },
         {
             "id": 2,
             "title": "Intitulé Projet 2",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde iusto eveniet maiores obcaecati optio veritatis."
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde iusto eveniet maiores obcaecati.",
+            "tag": "web"
         },
         {
             "id": 3,
             "title": "Intitulé Projet 3",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde iusto eveniet maiores obcaecati optio veritatis."
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde iusto eveniet maiores obcaecati.",
+            "tag": "iot"
         }
     ],
     "services": {
