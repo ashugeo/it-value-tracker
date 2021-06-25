@@ -730,6 +730,105 @@ h4 {
             content: "CRM";
         }
     }
+
+    &[data-tag="wms"] {
+        color: hsl(340, 80%, 30%);
+        background-color: hsl(340, 90%, 90%);
+        
+        &::after {
+            content: "WMS";
+        }
+    }
+
+    &[data-tag="ot"] {
+        color: hsl(160, 80%, 30%);
+        background-color: hsl(160, 90%, 90%);
+        
+        &::after {
+            content: "OT";
+        }
+    }
+
+    &[data-tag="iot"] {
+        color: hsl(230, 80%, 30%);
+        background-color: hsl(230, 90%, 90%);
+        
+        &::after {
+            content: "IoT";
+        }
+    }
+
+    &[data-tag="portail"] {
+        color: hsl(20, 80%, 30%);
+        background-color: hsl(20, 90%, 90%);
+        
+        &::after {
+            content: "Portail";
+        }
+    }
+
+    &[data-tag="ia"] {
+        color: hsl(160, 80%, 30%);
+        background-color: hsl(160, 90%, 85%);
+        
+        &::after {
+            content: "IA";
+        }
+    }
+
+    &[data-tag="nlp"] {
+        color: hsl(260, 80%, 30%);
+        background-color: hsl(260, 90%, 90%);
+        
+        &::after {
+            content: "NLP";
+        }
+    }
+
+    &[data-tag="rpa"] {
+        color: hsl(300, 80%, 30%);
+        background-color: hsl(300, 90%, 90%);
+        
+        &::after {
+            content: "RPA";
+        }
+    }
+
+    &[data-tag="logs"] {
+        color: hsl(340, 80%, 30%);
+        background-color: hsl(340, 90%, 90%);
+        
+        &::after {
+            content: "Logs";
+        }
+    }
+
+    &[data-tag="maintenance"] {
+        color: hsl(200, 80%, 30%);
+        background-color: hsl(200, 90%, 90%);
+        
+        &::after {
+            content: "Maintenance";
+        }
+    }
+
+    &[data-tag="it-foundation"] {
+        color: hsl(160, 80%, 30%);
+        background-color: hsl(160, 90%, 85%);
+        
+        &::after {
+            content: "IT Foundation";
+        }
+    }
+
+    &[data-tag="supervision"] {
+        color: hsl(260, 80%, 30%);
+        background-color: hsl(260, 90%, 90%);
+        
+        &::after {
+            content: "Supervision";
+        }
+    }
 }
 
 .tab {
