@@ -2,7 +2,7 @@
     "kpis": [
         {
             "id": 0,
-            "title": "Effectivité développement nouveaux produits",
+            "title": "Performance des ventes",
             "projects": [0, 1],
             "budget": {
                 "total": 83000,
@@ -21,7 +21,7 @@
         },
         {
             "id": 1,
-            "title": "Performance des ventes",
+            "title": "Effectivité développement nouveaux produits",
             "projects": [2, 3, 4],
             "budget": {
                 "total": 38000,
