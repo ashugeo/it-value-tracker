@@ -35,7 +35,7 @@ $(document).on('click', '[data-to-project]', e => {
     const project = data.projects.find(d => d.id === id);
 
     const html = `<p data-back><i class="fas fa-arrow-left"></i>${currentKpi.title}</p>
-    <h2>${project.title}${project.tags.map(d => `<span class="tag" data-tag="${d}"></span>`).join('')}</h2>`;
+    <h2>Projet IT : ${project.title}${project.tags.map(d => `<span class="tag" data-tag="${d}"></span>`).join('')}</h2>`;
     $('#project .title').html(html);
 
     $('[data-to-tab="dashboard"]').click();
