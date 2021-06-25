@@ -105,7 +105,7 @@ function loadService(slug) {
 
         const html = `<div class="box" data-kpi="${id}">
             <h3>${kpi.title}</h3>
-            <div class="chart"></div>
+            <img src="./img/chart1.png" alt="Chart" />
         </div>`;
         
         $('#kpis').append(html);
