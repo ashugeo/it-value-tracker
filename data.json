@@ -5,16 +5,16 @@
             "title": "Effectivité développement nouveaux produits",
             "projects": [0, 1],
             "budget": {
-                "total": 38000,
-                "spent": 75,
+                "total": 83000,
+                "spent": 72,
                 "shares": [
                     {
                         "project": 0,
-                        "share": 54
+                        "share": 58
                     },
                     {
                         "project": 1,
-                        "share": 26
+                        "share": 42
                     }
                 ]
             }
@@ -25,7 +25,7 @@
             "projects": [2, 3, 4],
             "budget": {
                 "total": 38000,
-                "spent": 60,
+                "spent": 29,
                 "shares": [
                     {
                         "project": 2,
@@ -47,24 +47,24 @@
             "title": "Efficacité opérationnelle",
             "projects": [5, 6, 7, 8],
             "budget": {
-                "total": 38000,
-                "spent": 60,
+                "total": 12000,
+                "spent": 33,
                 "shares": [
                     {
                         "project": 5,
-                        "share": 54
+                        "share": 31
                     },
                     {
                         "project": 6,
-                        "share": 26
+                        "share": 12
                     },
                     {
                         "project": 7,
-                        "share": 10
+                        "share": 38
                     },
                     {
                         "project": 8,
-                        "share": 10
+                        "share": 19
                     }
                 ]
             }
@@ -74,20 +74,20 @@
             "title": "Efficacité des fournisseurs",
             "projects": [9, 8, 10],
             "budget": {
-                "total": 38000,
-                "spent": 60,
+                "total": 125000,
+                "spent": 42,
                 "shares": [
                     {
                         "project": 9,
-                        "share": 54
+                        "share": 48
                     },
                     {
                         "project": 8,
-                        "share": 26
+                        "share": 13
                     },
                     {
                         "project": 10,
-                        "share": 20
+                        "share": 39
                     }
                 ]
             }
@@ -97,28 +97,28 @@
             "title": "Réactivité vis-à-vis des clients",
             "projects": [8, 11, 12, 2, 13],
             "budget": {
-                "total": 38000,
-                "spent": 60,
+                "total": 49000,
+                "spent": 38,
                 "shares": [
                     {
                         "project": 8,
-                        "share": 54
+                        "share": 8
                     },
                     {
                         "project": 11,
-                        "share": 26
+                        "share": 15
                     },
                     {
                         "project": 12,
-                        "share": 20
+                        "share": 22
                     },
                     {
                         "project": 2,
-                        "share": 20
+                        "share": 42
                     },
                     {
                         "project": 13,
-                        "share": 20
+                        "share": 13
                     }
                 ]
             }
@@ -128,20 +128,20 @@
             "title": "Performance du Support",
             "projects": [12, 14, 15],
             "budget": {
-                "total": 38000,
-                "spent": 60,
+                "total": 69000,
+                "spent": 94,
                 "shares": [
                     {
                         "project": 12,
-                        "share": 54
+                        "share": 38
                     },
                     {
                         "project": 14,
-                        "share": 26
+                        "share": 17
                     },
                     {
                         "project": 15,
-                        "share": 20
+                        "share": 45
                     }
                 ]
             }
@@ -151,20 +151,20 @@
             "title": "Performance de l'exploitation",
             "projects": [16, 17, 18],
             "budget": {
-                "total": 38000,
-                "spent": 60,
+                "total": 15000,
+                "spent": 14,
                 "shares": [
                     {
                         "project": 9,
-                        "share": 54
+                        "share": 25
                     },
                     {
                         "project": 8,
-                        "share": 26
+                        "share": 34
                     },
                     {
                         "project": 10,
-                        "share": 20
+                        "share": 41
                     }
                 ]
             }

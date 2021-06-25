@@ -131,11 +131,11 @@ function openKpi(id) {
     const html = `<div class="values">
         <div>
             <p>Budget total</p>
-            <p><strong>${kpi.budget.total.toLocaleString()} €</strong></p>
+            <p><strong>${Math.round(kpi.budget.total / 100)}K €</strong></p>
         </div>
         <div>
             <p>Budget dépensé</p>
-            <p><strong>${(kpi.budget.spent / 100 * kpi.budget.total).toLocaleString()} €</strong><span>${kpi.budget.spent}%</span></p>
+            <p><strong>${Math.round(kpi.budget.spent / 100 * kpi.budget.total / 100)}K €</strong><span>${kpi.budget.spent}%</span></p>
         </div>
     </div>
     <div class="bar">
